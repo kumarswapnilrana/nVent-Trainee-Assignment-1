@@ -1,0 +1,34 @@
+<div>
+  <button mat-raised-button class="addButton" [routerLink]="['/AddAppliance']">Add Appliance</button>
+</div>
+
+<div>
+  <!-- <mat-form-field appearance="outline" color="accent">
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. 1000 or drills" #input>
+  </mat-form-field> -->
+
+  <table matSort class="mat-elevation-z8" (matSortChange)="sortData($event)">
+
+    <tr>
+      <th mat-sort-header="name">Name</th>
+      <th mat-sort-header="type">Type</th>
+      <th> Description</th>
+      <th mat-sort-header="price">Price</th>
+      <th> Technical Specification</th>
+      <th mat-sort-header="quantity">Quantity</th>
+    </tr>
+    <tr *ngFor = "let app of sortedData" [attr.id]="app.name">
+      <td>{{app.name}}</td>
+      <td>{{app.type}}</td>
+      <td>{{app.desc}}</td>
+      <td>{{app.price}}</td>
+      <td>{{app.techspec}}</td>
+      <td>{{app.quantity}}</td>
+      <td><button mat-icon-button color="primary" (click)="editApp(app.name)"><mat-icon>edit</mat-icon></button></td>
+      <td><button mat-icon-button color="warn" (click)="deleteApp(app.name)"><mat-icon>delete</mat-icon></button></td>
+    </tr>
+
+
+  </table>
+</div>

@@ -1,0 +1,53 @@
+<div class=loginDiv>
+
+  <mat-card class="login">
+    <mat-card-header>
+
+      <mat-card-title>
+        Add Appliance
+      </mat-card-title>
+
+      <mat-card-subtitle>
+        Please Provide The Following Information
+      </mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput [(ngModel)]="newApp.name">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Type</mat-label>
+        <input matInput [(ngModel)]="newApp.type">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <input matInput [(ngModel)]="newApp.desc">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Price</mat-label>
+        <input matInput [(ngModel)]="newApp.price">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Technical Specifications</mat-label>
+        <input matInput [(ngModel)]="newApp.techspec">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Quantity</mat-label>
+        <input matInput [(ngModel)]="newApp.quantity">
+      </mat-form-field>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button color="primary" matRippleBounded (click) = "addApp()" > Add </button>
+      <button mat-raised-button color="warn" matRippleBounded [routerLink]= "['/Appliance']" > Cancel </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
